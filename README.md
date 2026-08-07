@@ -323,20 +323,3 @@ Postgres - they write real rows.
 - **The console is intentionally minimal** - functional (list, trigger,
   trace, approve/reject) rather than polished, to protect time for the
   engine's correctness properties.
-
-## Deliverables checklist
-
-- [x] Orchestration engine + console (`src/`, `public/`)
-- [x] This README: setup, API summary, architecture, state machine, recovery
-      approach, known limitations
-- [x] Public GitHub repo *(push this project and update the link)*
-- [x] Seeded demo workflows (`data/seed_workflows.json`, loaded by `npm run seed`)
-      + reproduction instructions (above, using `scripts/mock_world.py`)
-- [x] `verification/verification_report.md` - smoke test, kill-and-resume
-      drill + duplication check, prompt-injection resistance test, all run
-      against this codebase
-- [ ] Explainer video - record after pushing to a repo: trigger → AI
-      branching → approval gate → worker crash/resume → prompt-injection
-      handling → step-cap protection (the CLI walkthrough in this README's
-      Setup section plus the verification report cover every beat you'd
-      narrate)
