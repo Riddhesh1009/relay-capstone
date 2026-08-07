@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Relay Console</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Relay</h1>
+    <div class="token-box">
+      <label>Token: <input id="token" type="text" value="demo-token-123" /></label>
+    </div>
+  </header>
+
+  <nav>
+    <button data-view="workflows" class="active">Workflows</button>
+    <button data-view="runs">Runs</button>
+    <button data-view="approvals">Approvals</button>
+  </nav>
+
+  <main>
+    <section id="view-workflows" class="view active">
+      <div class="toolbar">
+        <button id="refresh-workflows">Refresh</button>
+        <button id="new-workflow">New from JSON</button>
+      </div>
+      <table id="workflows-table">
+        <thead><tr><th>ID</th><th>Name</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="view-runs" class="view">
+      <div class="toolbar">
+        <button id="refresh-runs">Refresh</button>
+      </div>
+      <table id="runs-table">
+        <thead><tr><th>Run</th><th>Workflow</th><th>Status</th><th>Steps</th><th>Started</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div id="run-detail"></div>
+    </section>
+
+    <section id="view-approvals" class="view">
+      <div class="toolbar">
+        <button id="refresh-approvals">Refresh</button>
+      </div>
+      <table id="approvals-table">
+        <thead><tr><th>ID</th><th>Run</th><th>Message</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <dialog id="new-workflow-dialog">
+    <h3>Paste workflow definition JSON</h3>
+    <textarea id="new-workflow-json" rows="16" cols="70"></textarea>
+    <div class="dialog-actions">
+      <button id="submit-new-workflow">Create Draft</button>
+      <button id="cancel-new-workflow">Cancel</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

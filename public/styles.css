@@ -1,0 +1,142 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --border: #2a2e38;
+  --text: #e6e6e6;
+  --muted: #9aa1ac;
+  --accent: #6b8afd;
+  --ok: #4caf7d;
+  --warn: #e0a83a;
+  --err: #e05d5d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 { margin: 0; font-size: 20px; }
+
+.token-box input {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 8px;
+  border-radius: 4px;
+  width: 220px;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+nav button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+nav button.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: rgba(107, 138, 253, 0.12);
+}
+
+main { padding: 20px; }
+
+.view { display: none; }
+.view.active { display: block; }
+
+.toolbar { margin-bottom: 12px; display: flex; gap: 8px; }
+
+button {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+button:hover { border-color: var(--accent); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+th { color: var(--muted); font-weight: 600; }
+
+.status { padding: 2px 8px; border-radius: 10px; font-size: 12px; }
+.status-published, .status-succeeded, .status-approved { background: rgba(76,175,125,.15); color: var(--ok); }
+.status-draft, .status-queued, .status-pending { background: rgba(224,168,58,.15); color: var(--warn); }
+.status-failed, .status-cancelled, .status-rejected { background: rgba(224,93,93,.15); color: var(--err); }
+.status-running, .status-waiting_approval { background: rgba(107,138,253,.15); color: var(--accent); }
+
+#run-detail {
+  margin-top: 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+pre {
+  background: #0b0d11;
+  padding: 10px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 12px;
+}
+
+.step-row { border-bottom: 1px solid var(--border); padding: 8px 0; }
+
+dialog {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 640px;
+}
+
+textarea {
+  width: 100%;
+  background: #0b0d11;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.dialog-actions { margin-top: 10px; display: flex; gap: 8px; justify-content: flex-end; }
